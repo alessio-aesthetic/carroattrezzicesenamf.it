@@ -18,22 +18,22 @@ export default function Header() {
     <header className={`fixed left-0 top-0 z-50 w-full transition ${sticky ? "border-b border-emerald-900/10 bg-white/95 shadow-sm backdrop-blur" : "bg-white/80 backdrop-blur"}`}>
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center">
-          <img src="/images/brand/logo-cesena.webp" alt="Carroattrezzi Cesena" className="h-auto w-52 max-w-full" />
+          <img src="/images/brand/logo-cesena.png" alt="Carroattrezzi Cesena" className="h-auto w-52 max-w-full" />
         </Link>
         <button onClick={() => setOpen(!open)} className="rounded-xl border border-slate-200 px-4 py-2 font-bold lg:hidden">Menu</button>
         <nav className={`${open ? "block" : "hidden"} absolute left-4 right-4 top-24 rounded-3xl border border-slate-200 bg-white p-5 shadow-xl lg:static lg:block lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}>
           <ul className="flex flex-col gap-3 font-bold text-slate-800 lg:flex-row lg:items-center lg:gap-7">
             <li><Link href="/">Home</Link></li>
             <li className="group relative">
-              <span>Servizi</span>
-              <div className="mt-2 grid gap-1 rounded-2xl bg-white p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-80 lg:border lg:border-slate-100 lg:opacity-0 lg:shadow-xl lg:group-hover:visible lg:group-hover:opacity-100">
+              <span className="block cursor-default py-2">Servizi</span>
+              <div className="grid gap-1 rounded-2xl bg-white p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-80 lg:border lg:border-slate-100 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
                 <Link className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="/servizi/">Tutti i servizi</Link>
                 {services.map((s) => <Link className="rounded-xl px-3 py-2 text-sm hover:bg-emerald-50" key={s.slug} href={`/servizi/${s.slug}/`}>{s.title.replace(" a Cesena", "")}</Link>)}
               </div>
             </li>
             <li className="group relative">
-              <span>Zone</span>
-              <div className="mt-2 grid gap-1 rounded-2xl bg-white p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-72 lg:border lg:border-slate-100 lg:opacity-0 lg:shadow-xl lg:group-hover:visible lg:group-hover:opacity-100">
+              <span className="block cursor-default py-2">Zone</span>
+              <div className="grid gap-1 rounded-2xl bg-white p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-72 lg:border lg:border-slate-100 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
                 {zones.map((z) => <Link className="rounded-xl px-3 py-2 text-sm hover:bg-emerald-50" key={z.slug} href={`/zone/${z.slug}/`}>{z.title}</Link>)}
               </div>
             </li>
