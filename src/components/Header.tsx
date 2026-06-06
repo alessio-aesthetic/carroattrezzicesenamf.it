@@ -17,14 +17,8 @@ export default function Header() {
   return (
     <header className={`fixed left-0 top-0 z-50 w-full transition ${sticky ? "border-b border-emerald-900/10 bg-white/95 shadow-sm backdrop-blur" : "bg-white/80 backdrop-blur"}`}>
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="relative flex h-12 w-12 rotate-45 items-center justify-center rounded-[18px] bg-[#0f766e] shadow-lg shadow-emerald-800/20">
-            <span className="-rotate-45 text-lg font-black text-lime-200">MF</span>
-          </span>
-          <span>
-            <span className="block text-lg font-black tracking-tight text-[#10201d]">Carroattrezzi Cesena</span>
-            <span className="block text-xs font-extrabold uppercase tracking-[0.22em] text-[#0f766e]">mobile fast</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <img src="/images/brand/logo-cesena.webp" alt="Carroattrezzi Cesena" className="h-auto w-52 max-w-full" />
         </Link>
         <button onClick={() => setOpen(!open)} className="rounded-xl border border-slate-200 px-4 py-2 font-bold lg:hidden">Menu</button>
         <nav className={`${open ? "block" : "hidden"} absolute left-4 right-4 top-24 rounded-3xl border border-slate-200 bg-white p-5 shadow-xl lg:static lg:block lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}>

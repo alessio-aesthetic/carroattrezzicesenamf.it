@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[#10201d] py-14 text-white">
       <div className="container grid gap-10 lg:grid-cols-4">
         <div>
-          <div className="mb-4 text-2xl font-black">Carroattrezzi Cesena MF</div>
+          <img src="/images/brand/logo-cesena.webp" alt="Carroattrezzi Cesena" className="mb-4 h-auto w-60 max-w-full" />
           <p className="text-emerald-50/75">Soccorso stradale, traino auto e recupero veicoli a Cesena e provincia.</p>
           <div className="mt-5 space-y-2 text-sm text-emerald-50/75">
             <p>{site.address}</p>
