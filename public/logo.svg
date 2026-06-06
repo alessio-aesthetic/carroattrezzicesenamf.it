@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120" fill="none">
+<path d="M60 10L104 35V85L60 110L16 85V35L60 10Z" fill="#0F766E"/>
+<path d="M36 69H72L86 48H76L68 60H51L61 43H50L36 69Z" fill="#D9F99D"/>
+<circle cx="45" cy="77" r="7" fill="#10201D"/><circle cx="78" cy="77" r="7" fill="#10201D"/>
+<text x="128" y="53" font-family="Arial, sans-serif" font-size="31" font-weight="900" fill="#10201D">Carroattrezzi</text>
+<text x="128" y="84" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#0F766E">Cesena MF</text>
+</svg>
