@@ -18,7 +18,7 @@ export default function Schema() {
     },
     areaServed: ["Cesena", "Cesenatico", "Forlì", "Gambettola", "Savignano sul Rubicone"],
     openingHours: "Mo-Su 00:00-23:59",
-    image: `${site.url}/images/recovery/hero-recovery.jpg`,
+    image: `${site.url}/images/recovery/c-hero-main.webp`,
     priceRange: "$$",
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;

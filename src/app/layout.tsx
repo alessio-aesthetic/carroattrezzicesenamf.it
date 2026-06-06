@@ -16,7 +16,7 @@ export const metadata = {
     description: "Soccorso stradale, traino auto e recupero veicoli a Cesena e provincia.",
     url: site.url,
     siteName: site.domain,
-    images: ["/images/recovery/hero-recovery.jpg"],
+    images: ["/images/recovery/c-hero-main.webp"],
     locale: "it_IT",
     type: "website",
   },

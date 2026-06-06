@@ -16,7 +16,7 @@ export function Hero() {
           </div>
         </div>
         <div className="relative h-[520px] overflow-hidden rounded-[3rem] border-[10px] border-white shadow-2xl">
-          <Image src="/images/recovery/c-hero-main.jpg" alt="Carroattrezzi a Cesena" fill priority className="object-cover" />
+          <Image src="/images/recovery/c-hero-main.webp" alt="Carroattrezzi a Cesena" fill priority className="object-cover" />
         </div>
       </div>
     </section>
@@ -64,7 +64,7 @@ export function AboutPanel() {
   return (
     <section className="py-20">
       <div className="container grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-        <div className="relative h-[500px] overflow-hidden rounded-[3rem]"><Image src="/images/recovery/c-about-main.jpg" alt="Assistenza carroattrezzi Cesena" fill className="object-cover" /></div>
+        <div className="relative h-[500px] overflow-hidden rounded-[3rem]"><Image src="/images/recovery/c-about-main.webp" alt="Assistenza carroattrezzi Cesena" fill className="object-cover" /></div>
         <div>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#0f766e]">chi siamo</p>
           <h2 className="mb-6 text-3xl font-black text-[#10201d] lg:text-5xl">Una squadra locale per recuperi, traini e trasporti gestiti con ordine.</h2>
