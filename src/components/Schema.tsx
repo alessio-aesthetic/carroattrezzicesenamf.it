@@ -16,7 +16,7 @@ export default function Schema() {
       addressRegion: "FC",
       addressCountry: "IT",
     },
-    areaServed: ["Cesena", "Cesenatico", "Forli", "Gambettola", "Savignano sul Rubicone"],
+    areaServed: ["Cesena", "Cesenatico", "Forlì", "Gambettola", "Savignano sul Rubicone"],
     openingHours: "Mo-Su 00:00-23:59",
     image: `${site.url}/images/recovery/hero-recovery.jpg`,
     priceRange: "$$",

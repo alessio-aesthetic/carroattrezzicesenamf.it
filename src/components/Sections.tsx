@@ -16,7 +16,7 @@ export function Hero() {
           </div>
         </div>
         <div className="relative h-[520px] overflow-hidden rounded-[3rem] border-[10px] border-white shadow-2xl">
-          <Image src="/images/recovery/hero-recovery.jpg" alt="Carroattrezzi a Cesena" fill priority className="object-cover" />
+          <Image src="/images/recovery/c-hero-main.jpg" alt="Carroattrezzi a Cesena" fill priority className="object-cover" />
         </div>
       </div>
     </section>
@@ -32,7 +32,7 @@ export function Intro() {
           <h2 className="text-3xl font-black text-[#10201d] lg:text-5xl">Un servizio di carroattrezzi deve togliere incertezza, non aggiungerla.</h2>
         </div>
         <div className="space-y-5 text-lg leading-8 text-slate-700">
-          <p>Quando l auto non riparte, il cliente ha bisogno di poche cose fatte bene: risposta chiara, indicazioni semplici e un intervento proporzionato al problema. Per questo chiediamo subito posizione, modello del mezzo, sintomi e destinazione preferita.</p>
+          <p>Quando l'auto non riparte, il cliente ha bisogno di poche cose fatte bene: risposta chiara, indicazioni semplici e un intervento proporzionato al problema. Per questo chiediamo subito posizione, modello del mezzo, sintomi e destinazione preferita.</p>
           <p>Il carroattrezzi a Cesena viene organizzato in base alla situazione reale: guasto, incidente, gomma danneggiata, batteria scarica o trasporto programmato. L obiettivo e ridurre tempi, stress e rischi per il veicolo.</p>
           <p>Lavoriamo con attenzione al caricamento, al fissaggio e alla comunicazione. Ogni passaggio viene spiegato con parole semplici, cosi sai dove andra il mezzo e cosa aspettarti dopo il recupero.</p>
         </div>
@@ -64,13 +64,13 @@ export function AboutPanel() {
   return (
     <section className="py-20">
       <div className="container grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-        <div className="relative h-[500px] overflow-hidden rounded-[3rem]"><Image src="/images/recovery/workshop-car.jpg" alt="Assistenza carroattrezzi Cesena" fill className="object-cover" /></div>
+        <div className="relative h-[500px] overflow-hidden rounded-[3rem]"><Image src="/images/recovery/c-about-main.jpg" alt="Assistenza carroattrezzi Cesena" fill className="object-cover" /></div>
         <div>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#0f766e]">chi siamo</p>
           <h2 className="mb-6 text-3xl font-black text-[#10201d] lg:text-5xl">Una squadra locale per recuperi, traini e trasporti gestiti con ordine.</h2>
           <div className="space-y-5 text-lg leading-8 text-slate-700">
-            <p>Carroattrezzi Cesena MF nasce per dare un riferimento diretto a chi si trova con un veicolo fermo. Non vendiamo promesse generiche: ascoltiamo il problema e organizziamo la soluzione piu sensata.</p>
-            <p>Il servizio copre emergenze stradali, trasporti programmati, recupero dopo incidente e assistenza per auto, moto e mezzi leggeri. La priorita e sempre proteggere persone e veicolo.</p>
+            <p>Carroattrezzi Cesena MF nasce per dare un riferimento diretto a chi si trova con un veicolo fermo. Non vendiamo promesse generiche: ascoltiamo il problema e organizziamo la soluzione più sensata.</p>
+            <p>Il servizio copre emergenze stradali, trasporti programmati, recupero dopo incidente e assistenza per auto, moto e mezzi leggeri. La priorità è sempre proteggere persone e veicolo.</p>
           </div>
         </div>
       </div>
@@ -91,10 +91,10 @@ export function ZonesGrid() {
 
 export function Faq() {
   const items = [
-    ["Quando devo chiamare?", "Quando il veicolo non puo ripartire in sicurezza, dopo un incidente, con batteria scarica, gomma rotta o guasto improvviso."],
+    ["Quando devo chiamare?", "Quando il veicolo non può ripartire in sicurezza, dopo un incidente, con batteria scarica, gomma rotta o guasto improvviso."],
     ["Dove portate il mezzo?", "In officina, in deposito o verso una destinazione concordata con il proprietario."],
-    ["Serve una posizione precisa?", "Si, indicare via, incrocio o punto visibile permette di organizzare meglio l intervento."],
-    ["Fate anche trasporti programmati?", "Si, oltre alle urgenze gestiamo spostamenti concordati di auto e veicoli non marcianti."],
+    ["Serve una posizione precisa?", "Sì, indicare via, incrocio o punto visibile permette di organizzare meglio l'intervento."],
+    ["Fate anche trasporti programmati?", "Sì, oltre alle urgenze gestiamo spostamenti concordati di auto e veicoli non marcianti."],
   ];
   return <section className="py-20"><div className="container"><h2 className="mb-10 text-3xl font-black text-[#10201d] lg:text-5xl">Domande frequenti</h2><div className="grid gap-5 lg:grid-cols-2">{items.map(([q,a]) => <div key={q} className="rounded-[2rem] border border-emerald-900/10 bg-white p-7 shadow-sm"><h3 className="mb-3 text-xl font-black">{q}</h3><p className="leading-7 text-slate-600">{a}</p></div>)}</div></div></section>;
 }
