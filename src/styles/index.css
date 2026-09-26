@@ -306,11 +306,11 @@ body { background: #f8f7f0; color: #13213a; font-family: 'DM Sans', system-ui, s
 .dispatch-hero { overflow: hidden; padding-top: 86px; background: #f8f7f0; color: #13213a; }
 .dispatch-hero::before { position:absolute; inset:86px 0 auto; height: 1px; background:#13213a; opacity:.16; content:""; }
 .dispatch-hero__masthead { position:relative; z-index:2; display:flex; justify-content:space-between; margin:0 auto; max-width:1420px; padding:17px 30px 15px; border-bottom:1px solid #d8d7ce; color:#536078; font-size:.64rem; font-weight:800; letter-spacing:.2em; }
-.dispatch-hero__inner { max-width:1420px; padding:42px 30px 0; }
+.dispatch-hero__inner { max-width:1420px; padding:42px 30px 350px; }
 .dispatch-hero__headline { position:relative; z-index:1; width:min(100%,780px); }
 .dispatch-hero__eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 17px; color:#174bd8; font-size:.75rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
 .dispatch-hero__marker { display:inline-block; width:13px; height:13px; background:#d7ef43; border:2px solid #13213a; transform:rotate(45deg); animation: marker-wiggle 3.2s ease-in-out infinite; }
-.dispatch-hero h1 { margin:0; font-family:'Barlow Condensed', Impact, sans-serif; font-size:clamp(5.4rem,11vw,10.2rem); font-weight:800; letter-spacing:-.055em; line-height:.77; text-transform:uppercase; }
+.dispatch-hero h1 { margin:0; font-family:'Barlow Condensed', Impact, sans-serif; font-size:clamp(5.4rem,8.8vw,8.8rem); font-weight:800; letter-spacing:-.055em; line-height:.77; text-transform:uppercase; }
 .dispatch-hero h1 em { display:inline-block; margin-top:.1em; padding:0 .13em .035em; background:#d7ef43; font-style:normal; transform:rotate(-1.3deg); }
 .dispatch-hero__lead { max-width:490px; margin:28px 0 0; color:#4b5970; font-size:1.05rem; line-height:1.7; }
 .dispatch-hero__callout { position:absolute; z-index:4; top:180px; right:max(calc((100vw - 1360px)/2),42px); width:285px; padding:21px; border:1px solid #13213a; background:#d7ef43; box-shadow:9px 9px 0 #174bd8; transform:rotate(2deg); animation: note-hover 5s ease-in-out infinite; }
@@ -321,7 +321,7 @@ body { background: #f8f7f0; color: #13213a; font-family: 'DM Sans', system-ui, s
 .dispatch-hero__callout > p { margin:12px 0 0; color:#394524; font-size:.78rem; line-height:1.45; }
 .dispatch-hero__hours { display:flex; align-items:center; gap:11px; margin-top:16px; padding-top:12px; border-top:1px solid rgba(19,33,58,.25); color:#13213a; font-size:.68rem; font-weight:700; line-height:1.4; }
 .dispatch-hero__hours > span:first-child { display:grid; width:35px; height:35px; place-items:center; border-radius:50%; background:#13213a; color:#d7ef43; font-size:.8rem; }
-.dispatch-hero__scene { position:relative; height:clamp(330px,43vw,570px); margin:62px 0 0; overflow:hidden; background:#aac9d4; clip-path:polygon(0 8%, 87% 0, 100% 12%, 100% 100%, 0 100%); }
+.dispatch-hero__scene { position:absolute; top:250px; right:30px; width:51%; height:430px; margin:0; overflow:hidden; background:#aac9d4; clip-path:polygon(0 8%, 87% 0, 100% 12%, 100% 100%, 0 100%); }
 .dispatch-hero__scene img { object-position:center 56%; filter:saturate(1.15) contrast(1.03); animation: journal-photo 16s ease-in-out infinite alternate; }
 .dispatch-hero__scene::after { position:absolute; inset:45% 0 0; background:linear-gradient(transparent,rgba(10,25,53,.6)); content:""; }
 .dispatch-hero__scene-caption { position:absolute; z-index:2; right:25px; bottom:20px; left:25px; display:flex; justify-content:space-between; color:#fff; font-size:.65rem; font-weight:800; letter-spacing:.15em; }
@@ -408,8 +408,9 @@ body main > section:first-child:not(.dispatch-hero):not(.dispatch-page-intro) a 
 @keyframes route-wander { from{transform:translateX(0)} to{transform:translateX(12px)} }
 @keyframes star-turn { to{transform:rotate(360deg)} }
 @media (max-width:1023px) {
+ .dispatch-hero__inner { padding-bottom:0; }
  .dispatch-hero__callout { top:auto; right:36px; bottom:calc(clamp(330px,43vw,570px) + 36px); width:255px; }
- .dispatch-hero__scene { margin-top:172px; }
+ .dispatch-hero__scene { position:relative; top:auto; right:auto; width:100%; height:clamp(330px,43vw,570px); margin-top:172px; }
  .dispatch-page-intro { min-height:420px; }
  .dispatch-page-intro__image { width:57%; opacity:.45; }
 }
