@@ -15,35 +15,37 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed left-0 top-0 z-50 w-full transition ${sticky ? "border-b border-emerald-900/10 bg-white/95 shadow-sm backdrop-blur" : "bg-white/80 backdrop-blur"}`}>
-      <div className="container flex h-20 items-center justify-between">
+    <>
+    <header className={`site-header fixed left-0 top-0 z-50 w-full transition ${sticky ? "is-sticky" : ""}`}>
+      <div className="container flex h-[86px] items-center justify-between">
         <Link href="/" className="flex items-center">
-          <img src="/images/brand/logo-cesena.png" alt="Carroattrezzi Cesena" className="h-auto w-52 max-w-full" />
+          <img src="/images/brand/logo-cesena.png" alt="Carroattrezzi Cesena" className="h-auto w-44 max-w-full" />
         </Link>
-        <button onClick={() => setOpen(!open)} className="rounded-xl border border-slate-200 px-4 py-2 font-bold lg:hidden">Menu</button>
-        <nav className={`${open ? "block" : "hidden"} absolute left-4 right-4 top-24 rounded-3xl border border-slate-200 bg-white p-5 shadow-xl lg:static lg:block lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}>
-          <ul className="flex flex-col gap-3 font-bold text-slate-800 lg:flex-row lg:items-center lg:gap-7">
+        <button aria-label={open ? "Chiudi menu" : "Apri menu"} aria-expanded={open} onClick={() => setOpen(!open)} className="site-menu-toggle lg:hidden"><span /><span /></button>
+        <nav className={`${open ? "block" : "hidden"} site-nav absolute left-4 right-4 top-24 rounded-3xl p-5 lg:static lg:block lg:p-0`}>
+          <ul className="flex flex-col gap-3 font-bold lg:flex-row lg:items-center lg:gap-7">
             <li><Link href="/">Home</Link></li>
             <li className="group relative">
-              <span className="block cursor-default py-2">Servizi</span>
-              <div className="grid gap-1 rounded-2xl bg-white p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-80 lg:border lg:border-slate-100 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
-                <Link className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="/servizi/">Tutti i servizi</Link>
-                {services.map((s) => <Link className="rounded-xl px-3 py-2 text-sm hover:bg-emerald-50" key={s.slug} href={`/servizi/${s.slug}/`}>{s.title.replace(" a Cesena", "")}</Link>)}
+              <span className="site-nav__trigger block cursor-default py-2">Servizi</span>
+              <div className="site-nav__dropdown grid gap-1 rounded-2xl p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-80 lg:opacity-0 lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
+                <Link className="rounded-xl px-3 py-2" href="/servizi/">Tutti i servizi</Link>
+                {services.map((s) => <Link className="rounded-xl px-3 py-2 text-sm" key={s.slug} href={`/servizi/${s.slug}/`}>{s.title.replace(" a Cesena", "")}</Link>)}
               </div>
             </li>
             <li className="group relative">
-              <span className="block cursor-default py-2">Zone</span>
-              <div className="grid gap-1 rounded-2xl bg-white p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-72 lg:border lg:border-slate-100 lg:opacity-0 lg:shadow-xl lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
-                {zones.map((z) => <Link className="rounded-xl px-3 py-2 text-sm hover:bg-emerald-50" key={z.slug} href={`/zone/${z.slug}/`}>{z.title}</Link>)}
+              <span className="site-nav__trigger block cursor-default py-2">Zone</span>
+              <div className="site-nav__dropdown grid gap-1 rounded-2xl p-2 lg:invisible lg:absolute lg:left-0 lg:top-full lg:w-72 lg:opacity-0 lg:transition lg:group-hover:visible lg:group-hover:opacity-100">
+                {zones.map((z) => <Link className="rounded-xl px-3 py-2 text-sm" key={z.slug} href={`/zone/${z.slug}/`}>{z.title}</Link>)}
               </div>
             </li>
             <li><Link href="/about/">Chi siamo</Link></li>
             <li><Link href="/contact/">Contatti</Link></li>
           </ul>
         </nav>
-        <Link href={`tel:${site.tel}`} className="hidden rounded-full bg-[#0f766e] px-5 py-3 font-black text-white shadow-lg shadow-emerald-800/20 lg:inline-flex">{site.phone}</Link>
+        <Link href={`tel:${site.tel}`} className="site-header__call hidden rounded-full px-5 py-3 font-black lg:inline-flex">Chiama {site.phone}</Link>
       </div>
-      <Link href={`tel:${site.tel}`} className="fixed bottom-4 left-4 right-4 z-[80] rounded-full bg-[#0f766e] px-5 py-4 text-center font-black text-white shadow-2xl lg:hidden">Chiama {site.phone}</Link>
     </header>
+    <Link href={`tel:${site.tel}`} className="site-mobile-call fixed bottom-4 left-4 right-4 z-[80] px-5 py-4 text-center font-black lg:hidden"><span className="site-mobile-call__pulse" />Chiama {site.phone}<span aria-hidden="true">↗</span></Link>
+    </>
   );
 }

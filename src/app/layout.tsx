@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollReveals from "@/components/ScrollReveals";
 import { site } from "@/lib/site";
 import "@/styles/index.css";
 import Providers from "./providers";
@@ -24,5 +25,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="it"><body><Providers><Header />{children}<Footer /></Providers></body></html>;
+  return <html lang="it"><body><Providers><ScrollReveals /><Header />{children}<Footer /></Providers></body></html>;
 }

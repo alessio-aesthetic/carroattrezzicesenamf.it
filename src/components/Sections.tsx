@@ -4,37 +4,57 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#ecfdf5] pt-32 lg:pt-40">
-      <div className="container grid gap-12 pb-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div>
-          <p className="mb-5 inline-flex rounded-full bg-lime-200 px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-[#10201d]">soccorso stradale Cesena</p>
-          <h1 className="mb-6 text-4xl font-black leading-tight text-[#10201d] sm:text-5xl lg:text-7xl">Carroattrezzi a Cesena per guasti, incidenti e traino auto</h1>
-          <p className="mb-8 text-lg leading-8 text-slate-700">Assistenza rapida per veicoli fermi, recupero auto, trasporto verso officina e interventi su strada. Una risposta chiara quando serve capire subito cosa fare.</p>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href={`tel:${site.tel}`} className="rounded-full bg-[#0f766e] px-8 py-4 text-center font-black text-white">Chiama {site.phone}</Link>
-            <Link href="/servizi/" className="rounded-full border border-[#0f766e] px-8 py-4 text-center font-black text-[#0f766e]">Vedi servizi</Link>
+    <section className="rescue-hero relative isolate overflow-hidden text-white">
+      <div className="rescue-hero__glow rescue-hero__glow--one" aria-hidden="true" />
+      <div className="rescue-hero__glow rescue-hero__glow--two" aria-hidden="true" />
+      <div className="container rescue-hero__inner relative z-10 grid items-center gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:gap-16">
+        <div className="rescue-hero__copy" data-reveal>
+          <p className="rescue-eyebrow"><span className="rescue-live-dot" /> Soccorso stradale · Cesena e provincia</p>
+          <h1>Carroattrezzi a<br />Cesena.<br /><span>Al tuo fianco.</span></h1>
+          <p className="rescue-hero__lead">Un guasto cambia la giornata. Una chiamata diretta ci aiuta a capire cosa è successo e a organizzare il recupero più adatto al tuo veicolo.</p>
+          <div className="rescue-hero__actions">
+            <Link href={`tel:${site.tel}`} className="rescue-button rescue-button--hot">
+              <span className="rescue-button__icon" aria-hidden="true">↗</span>
+              <span><small>Parla subito con noi</small><strong>{site.phone}</strong></span>
+            </Link>
+            <Link href="/servizi/" className="rescue-button rescue-button--quiet">Scopri i servizi <span aria-hidden="true">↓</span></Link>
+          </div>
+          <div className="rescue-hero__assurance">
+            <span><strong>24/7</strong><small>soccorso stradale</small></span>
+            <span><strong>Cesena</strong><small>e comuni vicini</small></span>
+            <span><strong>Diretto</strong><small>contatto telefonico</small></span>
           </div>
         </div>
-        <div className="relative h-[520px] overflow-hidden rounded-[3rem] border-[10px] border-white shadow-2xl">
-          <Image src="/images/recovery/c-hero-main.webp" alt="Carroattrezzi a Cesena" fill priority className="object-cover" />
+
+        <div className="rescue-hero__visual" data-reveal data-reveal-delay="2">
+          <div className="rescue-hero__route" aria-hidden="true"><span /><span /><span /></div>
+          <div className="rescue-hero__photo">
+            <Image src="/images/recovery/c-hero-main.webp" alt="Intervento di soccorso stradale con carroattrezzi" fill priority sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover" />
+            <div className="rescue-hero__photo-shade" />
+            <div className="rescue-hero__photo-caption"><span className="rescue-beacon" /> Siamo al tuo fianco, chilometro dopo chilometro</div>
+          </div>
+          <div className="rescue-floating-card"><span className="rescue-floating-card__mark" aria-hidden="true">24</span><span><strong>Un solo obiettivo</strong><small>riportarti in sicurezza</small></span><span className="rescue-floating-card__arrow" aria-hidden="true">↗</span></div>
+          <span className="rescue-hero__orbit rescue-hero__orbit--one" aria-hidden="true" />
+          <span className="rescue-hero__orbit rescue-hero__orbit--two" aria-hidden="true" />
         </div>
       </div>
+      <div className="rescue-hero__bottom-line" aria-hidden="true"><span>CESENA</span><i /><span>RECUPERO</span><i /><span>SOCCORSO STRADALE</span><i /><span>CESENA</span></div>
     </section>
   );
 }
 
 export function Intro() {
   return (
-    <section className="py-20">
-      <div className="container grid gap-10 lg:grid-cols-2">
-        <div>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#0f766e]">metodo pratico</p>
-          <h2 className="text-3xl font-black text-[#10201d] lg:text-5xl">Un servizio di carroattrezzi deve togliere incertezza, non aggiungerla.</h2>
+    <section className="rescue-intro section-pad">
+      <div className="container rescue-intro__grid">
+        <div data-reveal>
+          <p className="rescue-kicker"><span>01</span> Prima di tutto, chiarezza</p>
+          <h2>Nel momento difficile, <em>una voce umana</em> fa la differenza.</h2>
         </div>
-        <div className="space-y-5 text-lg leading-8 text-slate-700">
-          <p>Quando l'auto non riparte, il cliente ha bisogno di poche cose fatte bene: risposta chiara, indicazioni semplici e un intervento proporzionato al problema. Per questo chiediamo subito posizione, modello del mezzo, sintomi e destinazione preferita.</p>
-          <p>Il carroattrezzi a Cesena viene organizzato in base alla situazione reale: guasto, incidente, gomma danneggiata, batteria scarica o trasporto programmato. L obiettivo e ridurre tempi, stress e rischi per il veicolo.</p>
-          <p>Lavoriamo con attenzione al caricamento, al fissaggio e alla comunicazione. Ogni passaggio viene spiegato con parole semplici, cosi sai dove andra il mezzo e cosa aspettarti dopo il recupero.</p>
+        <div className="rescue-intro__detail" data-reveal data-reveal-delay="2">
+          <p>Quando l’auto si ferma, non dovresti perdere tempo tra dubbi e passaggi inutili. Raccontaci dove sei, che veicolo hai e cosa è successo: così possiamo valutare insieme la soluzione più adatta.</p>
+          <p>A Cesena e nei comuni vicini ci occupiamo di recupero, traino e trasporto. Ti spieghiamo i passaggi con parole semplici e concordiamo con te la destinazione del mezzo.</p>
+          <div className="rescue-intro__tags"><span>Auto</span><span>Moto</span><span>Furgoni leggeri</span><span>Trasporto veicoli</span></div>
         </div>
       </div>
     </section>
@@ -43,16 +63,16 @@ export function Intro() {
 
 export function ServicesGrid() {
   return (
-    <section className="bg-white py-20">
+    <section className="rescue-services section-pad">
       <div className="container">
-        <div className="mb-12 max-w-3xl">
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#0f766e]">servizi</p>
-          <h2 className="text-3xl font-black text-[#10201d] lg:text-5xl">Servizi di soccorso stradale e traino</h2>
+        <div className="rescue-section-heading" data-reveal>
+          <div><p className="rescue-kicker rescue-kicker--light"><span>02</span> Interventi su misura</p><h2>Ogni imprevisto<br /><em>ha la sua strada.</em></h2></div>
+          <p>Dal guasto al trasporto programmato: raccontaci la situazione e scegliamo insieme come intervenire.</p>
         </div>
-        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => <Link href={`/servizi/${s.slug}/`} key={s.slug} className="group overflow-hidden rounded-[2rem] border border-emerald-900/10 bg-[#f8faf7] shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-            <div className="relative h-52"><Image src={s.image} alt={s.title} fill className="object-cover transition duration-500 group-hover:scale-105" /></div>
-            <div className="p-6"><h3 className="mb-3 text-xl font-black text-[#10201d]">{s.title}</h3><p className="leading-7 text-slate-600">{s.short}</p></div>
+        <div className="rescue-services__grid">
+          {services.map((s, index) => <Link href={`/servizi/${s.slug}/`} key={s.slug} className="rescue-service-card" data-reveal data-reveal-delay={String(index % 3)}>
+            <div className="rescue-service-card__image"><Image src={s.image} alt={s.title} fill sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw" className="object-cover" /><span className="rescue-service-card__number">{String(index + 1).padStart(2, "0")}</span><span className="rescue-service-card__arrow" aria-hidden="true">↗</span></div>
+            <div className="rescue-service-card__body"><h3>{s.title}</h3><p>{s.short}</p></div>
           </Link>)}
         </div>
       </div>
@@ -62,16 +82,17 @@ export function ServicesGrid() {
 
 export function AboutPanel() {
   return (
-    <section className="py-20">
-      <div className="container grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-        <div className="relative h-[500px] overflow-hidden rounded-[3rem]"><Image src="/images/recovery/c-about-main.webp" alt="Assistenza carroattrezzi Cesena" fill className="object-cover" /></div>
-        <div>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#0f766e]">chi siamo</p>
-          <h2 className="mb-6 text-3xl font-black text-[#10201d] lg:text-5xl">Una squadra locale per recuperi, traini e trasporti gestiti con ordine.</h2>
-          <div className="space-y-5 text-lg leading-8 text-slate-700">
-            <p>Carroattrezzi Cesena MF nasce per dare un riferimento diretto a chi si trova con un veicolo fermo. Non vendiamo promesse generiche: ascoltiamo il problema e organizziamo la soluzione più sensata.</p>
-            <p>Il servizio copre emergenze stradali, trasporti programmati, recupero dopo incidente e assistenza per auto, moto e mezzi leggeri. La priorità è sempre proteggere persone e veicolo.</p>
-          </div>
+    <section className="rescue-about section-pad">
+      <div className="container rescue-about__grid">
+        <div className="rescue-about__visual" data-reveal>
+          <Image src="/images/recovery/c-about-main.webp" alt="Squadra di soccorso stradale al lavoro" fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover" />
+          <div className="rescue-about__stamp"><span>MF</span><small>Cesena<br />Soccorso stradale</small></div>
+        </div>
+        <div data-reveal data-reveal-delay="2">
+          <p className="rescue-kicker"><span>03</span> Un riferimento vicino</p>
+          <h2>Un recupero fatto bene comincia <em>dall’ascolto.</em></h2>
+          <div className="rescue-about__copy"><p>Carroattrezzi Cesena MF è un punto di contatto per chi ha un veicolo fermo e ha bisogno di capire come muoversi. Ascoltiamo la situazione prima di organizzare il recupero.</p><p>Ogni intervento parte da posizione, tipo di mezzo e problema. In questo modo possiamo valutare attrezzatura, modalità di carico e destinazione con maggiore attenzione.</p></div>
+          <Link href="/about/" className="rescue-text-link">Conosci il nostro approccio <span aria-hidden="true">↗</span></Link>
         </div>
       </div>
     </section>
@@ -80,10 +101,13 @@ export function AboutPanel() {
 
 export function ZonesGrid() {
   return (
-    <section className="bg-[#10201d] py-20 text-white">
+    <section className="rescue-zones section-pad">
       <div className="container">
-        <div className="mb-10 max-w-3xl"><p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-lime-200">zone</p><h2 className="text-3xl font-black lg:text-5xl">Carroattrezzi a Cesena e comuni vicini</h2></div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{zones.map((z) => <Link href={`/zone/${z.slug}/`} key={z.slug} className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 font-black hover:bg-lime-200 hover:text-[#10201d]">{z.title}</Link>)}</div>
+        <div className="rescue-section-heading" data-reveal>
+          <div><p className="rescue-kicker rescue-kicker--light"><span>04</span> La rete sul territorio</p><h2>Vicino a Cesena,<br /><em>pronti a raggiungerti.</em></h2></div>
+          <p>Consulta le località coperte e trova il riferimento per il tuo comune.</p>
+        </div>
+        <div className="rescue-zones__grid">{zones.map((z, index) => <Link href={`/zone/${z.slug}/`} key={z.slug} className="rescue-zone-link" data-reveal data-reveal-delay={String(index % 4)}><span>{String(index + 1).padStart(2, "0")}</span><strong>{z.title}</strong><i aria-hidden="true">↗</i></Link>)}</div>
       </div>
     </section>
   );
@@ -91,14 +115,14 @@ export function ZonesGrid() {
 
 export function Faq() {
   const items = [
-    ["Quando devo chiamare?", "Quando il veicolo non può ripartire in sicurezza, dopo un incidente, con batteria scarica, gomma rotta o guasto improvviso."],
-    ["Dove portate il mezzo?", "In officina, in deposito o verso una destinazione concordata con il proprietario."],
-    ["Serve una posizione precisa?", "Sì, indicare via, incrocio o punto visibile permette di organizzare meglio l'intervento."],
-    ["Fate anche trasporti programmati?", "Sì, oltre alle urgenze gestiamo spostamenti concordati di auto e veicoli non marcianti."],
+    ["Quando è il momento di chiamare il carroattrezzi?", "Quando l’auto non può ripartire in sicurezza, dopo un incidente, con batteria scarica, una gomma danneggiata o un guasto improvviso."],
+    ["Dove può essere portato il veicolo?", "In officina, in deposito o verso un’altra destinazione concordata insieme, in base alle condizioni del mezzo."],
+    ["Quali informazioni devo avere pronte?", "Indica la tua posizione, il tipo di veicolo e cosa è successo. Se puoi, aggiungi un riferimento visibile vicino al punto in cui ti trovi."],
+    ["Effettuate anche trasporti programmati?", "Sì, oltre al soccorso urgente puoi contattarci per organizzare il trasporto di auto e veicoli non marcianti."],
   ];
-  return <section className="py-20"><div className="container"><h2 className="mb-10 text-3xl font-black text-[#10201d] lg:text-5xl">Domande frequenti</h2><div className="grid gap-5 lg:grid-cols-2">{items.map(([q,a]) => <div key={q} className="rounded-[2rem] border border-emerald-900/10 bg-white p-7 shadow-sm"><h3 className="mb-3 text-xl font-black">{q}</h3><p className="leading-7 text-slate-600">{a}</p></div>)}</div></div></section>;
+  return <section className="rescue-faq section-pad"><div className="container"><div className="rescue-faq__heading" data-reveal><p className="rescue-kicker"><span>05</span> Risposte veloci</p><h2>Prima di chiamare,<br /><em>ecco cosa sapere.</em></h2></div><div className="rescue-faq__grid">{items.map(([q, a], index) => <article key={q} className="rescue-faq__item" data-reveal data-reveal-delay={String(index % 2)}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{q}</h3><p>{a}</p></div><i aria-hidden="true">+</i></article>)}</div></div></section>;
 }
 
 export function Cta() {
-  return <section className="bg-lime-200 py-16"><div className="container flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"><div><h2 className="text-3xl font-black text-[#10201d] lg:text-5xl">Veicolo fermo a Cesena?</h2><p className="mt-3 text-slate-700">Chiama e comunica posizione, veicolo e problema.</p></div><Link href={`tel:${site.tel}`} className="rounded-full bg-[#0f766e] px-8 py-4 text-center font-black text-white">{site.phone}</Link></div></section>;
+  return <section className="rescue-final-cta"><div className="container rescue-final-cta__inner" data-reveal><div><p>Fermo in strada?</p><h2>Parliamone.<br /><em>Ti aiutiamo a ripartire.</em></h2></div><Link href={`tel:${site.tel}`} className="rescue-button rescue-button--dark"><span className="rescue-button__icon" aria-hidden="true">↗</span><span><small>Chiama ora</small><strong>{site.phone}</strong></span></Link><div className="rescue-final-cta__ring" aria-hidden="true" /></div></section>;
 }
