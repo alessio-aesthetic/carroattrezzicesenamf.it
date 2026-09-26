@@ -1,4 +1,4 @@
-import { Cta, ServicesGrid } from "@/components/Sections";
+import { Cta, ServicesGrid, PageIntro } from "@/components/Sections";
 
 export const metadata = {
   title: "Servizi carroattrezzi a Cesena",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
-  return <main className="pt-20"><section className="bg-[#10201d] py-20 text-white"><div className="container max-w-4xl"><p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-lime-200">servizi</p><h1 className="mb-6 text-4xl font-black lg:text-6xl">Servizi carroattrezzi a Cesena</h1><p className="text-lg leading-8 text-emerald-50/80">Traino, recupero e assistenza stradale per auto ferme, incidenti e trasporti programmati.</p></div></section><ServicesGrid /><Cta /></main>;
+  return <main className="pt-20"><PageIntro eyebrow="Cosa facciamo" title="Dalla ruota bloccata al viaggio da riprendere." text="Traino, recupero e assistenza stradale per auto ferme, incidenti e trasporti programmati." image="/images/recovery/c-service-01-soccorso-stradale-24h.webp" /><ServicesGrid /><Cta /></main>;
 }

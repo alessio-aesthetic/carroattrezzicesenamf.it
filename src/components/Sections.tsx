@@ -4,41 +4,28 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="rescue-hero relative isolate overflow-hidden text-white">
-      <div className="rescue-hero__glow rescue-hero__glow--one" aria-hidden="true" />
-      <div className="rescue-hero__glow rescue-hero__glow--two" aria-hidden="true" />
-      <div className="container rescue-hero__inner relative z-10 grid items-center gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:gap-16">
-        <div className="rescue-hero__copy" data-reveal>
-          <p className="rescue-eyebrow"><span className="rescue-live-dot" /> Soccorso stradale · Cesena e provincia</p>
-          <h1>Carroattrezzi a<br />Cesena.<br /><span>Al tuo fianco.</span></h1>
-          <p className="rescue-hero__lead">Un guasto cambia la giornata. Una chiamata diretta ci aiuta a capire cosa è successo e a organizzare il recupero più adatto al tuo veicolo.</p>
-          <div className="rescue-hero__actions">
-            <Link href={`tel:${site.tel}`} className="rescue-button rescue-button--hot">
-              <span className="rescue-button__icon" aria-hidden="true">↗</span>
-              <span><small>Parla subito con noi</small><strong>{site.phone}</strong></span>
-            </Link>
-            <Link href="/servizi/" className="rescue-button rescue-button--quiet">Scopri i servizi <span aria-hidden="true">↓</span></Link>
-          </div>
-          <div className="rescue-hero__assurance">
-            <span><strong>24/7</strong><small>soccorso stradale</small></span>
-            <span><strong>Cesena</strong><small>e comuni vicini</small></span>
-            <span><strong>Diretto</strong><small>contatto telefonico</small></span>
-          </div>
+    <section className="dispatch-hero relative isolate overflow-hidden">
+      <div className="dispatch-hero__masthead" aria-hidden="true"><span>MF / SERVIZIO STRADALE</span><span>CESENA · 24 ORE</span></div>
+      <div className="container dispatch-hero__inner relative z-10">
+        <div className="dispatch-hero__headline" data-reveal>
+          <p className="dispatch-hero__eyebrow"><span className="dispatch-hero__marker" /> Se ti fermi, arriviamo noi</p>
+          <h1>La strada<br />non aspetta.<br /><em>Noi nemmeno.</em></h1>
+          <p className="dispatch-hero__lead">Carroattrezzi a Cesena, con una persona pronta ad ascoltarti e a capire subito di cosa hai bisogno.</p>
         </div>
-
-        <div className="rescue-hero__visual" data-reveal data-reveal-delay="2">
-          <div className="rescue-hero__route" aria-hidden="true"><span /><span /><span /></div>
-          <div className="rescue-hero__photo">
-            <Image src="/images/recovery/c-hero-main.webp" alt="Intervento di soccorso stradale con carroattrezzi" fill priority sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover" />
-            <div className="rescue-hero__photo-shade" />
-            <div className="rescue-hero__photo-caption"><span className="rescue-beacon" /> Siamo al tuo fianco, chilometro dopo chilometro</div>
-          </div>
-          <div className="rescue-floating-card"><span className="rescue-floating-card__mark" aria-hidden="true">24</span><span><strong>Un solo obiettivo</strong><small>riportarti in sicurezza</small></span><span className="rescue-floating-card__arrow" aria-hidden="true">↗</span></div>
-          <span className="rescue-hero__orbit rescue-hero__orbit--one" aria-hidden="true" />
-          <span className="rescue-hero__orbit rescue-hero__orbit--two" aria-hidden="true" />
+        <div className="dispatch-hero__callout" data-reveal data-reveal-delay="2">
+          <span className="dispatch-hero__callout-label">Una chiamata diretta</span>
+          <Link href={`tel:${site.tel}`} aria-label={`Chiama il carroattrezzi al ${site.phone}`} className="dispatch-hero__phone">{site.phone}<span aria-hidden="true">↗</span></Link>
+          <p>Raccontaci dove sei. Ti aiutiamo a capire il passo successivo.</p>
+          <div className="dispatch-hero__hours"><span>24</span><span>Disponibilità per urgenze<br />giorno e notte</span></div>
+        </div>
+        <div className="dispatch-hero__scene" data-reveal data-reveal-delay="1">
+          <Image src="/images/recovery/c-hero-main.webp" alt="Carroattrezzi impegnato in un intervento stradale" fill priority sizes="(max-width: 1024px) 100vw, 94vw" className="object-cover" />
+          <div className="dispatch-hero__scene-caption"><span>CESENA / ROMAGNA</span><span>RECUPERO · TRAINO · TRASPORTO</span></div>
+          <svg className="dispatch-hero__route" viewBox="0 0 800 200" fill="none" aria-hidden="true"><path d="M-20 153C90 153 93 61 203 61S327 161 425 161 566 40 645 40 746 110 820 110" stroke="currentColor" strokeWidth="5" strokeDasharray="8 12"/><circle cx="203" cy="61" r="9" fill="currentColor"/><circle cx="645" cy="40" r="9" fill="currentColor"/></svg>
+          <div className="dispatch-hero__badge"><span>MF</span><small>Qui per<br />aiutarti</small></div>
         </div>
       </div>
-      <div className="rescue-hero__bottom-line" aria-hidden="true"><span>CESENA</span><i /><span>RECUPERO</span><i /><span>SOCCORSO STRADALE</span><i /><span>CESENA</span></div>
+      <div className="dispatch-hero__ticker" aria-hidden="true"><span>SOCCORSO STRADALE</span><b>✳</b><span>CESENA E DINTORNI</span><b>✳</b><span>UNA VOCE, POI LA STRADA</span><b>✳</b></div>
     </section>
   );
 }
@@ -125,4 +112,16 @@ export function Faq() {
 
 export function Cta() {
   return <section className="rescue-final-cta"><div className="container rescue-final-cta__inner" data-reveal><div><p>Fermo in strada?</p><h2>Parliamone.<br /><em>Ti aiutiamo a ripartire.</em></h2></div><Link href={`tel:${site.tel}`} className="rescue-button rescue-button--dark"><span className="rescue-button__icon" aria-hidden="true">↗</span><span><small>Chiama ora</small><strong>{site.phone}</strong></span></Link><div className="rescue-final-cta__ring" aria-hidden="true" /></div></section>;
+}
+
+export function PageIntro({ eyebrow, title, text, image }: { eyebrow: string; title: string; text: string; image?: string }) {
+  return <section className="dispatch-page-intro">
+    {image && <div className="dispatch-page-intro__image"><Image src={image} alt="" fill priority sizes="(max-width: 900px) 100vw, 40vw" className="object-cover" /></div>}
+    <div className="container dispatch-page-intro__content" data-reveal>
+      <p className="dispatch-page-intro__eyebrow"><span />{eyebrow}</p>
+      <h1>{title}</h1>
+      <p>{text}</p>
+    </div>
+    <div className="dispatch-page-intro__index" aria-hidden="true">MF<span> / CESENA</span></div>
+  </section>;
 }
