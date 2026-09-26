@@ -10,7 +10,7 @@ export default function Schema() {
     email: site.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Via Cerchia di Sant'Egidio, 95",
+      streetAddress: "Via Cervese, 3725",
       postalCode: "47521",
       addressLocality: "Cesena",
       addressRegion: "FC",
