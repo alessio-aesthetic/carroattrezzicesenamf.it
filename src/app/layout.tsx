@@ -25,5 +25,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="it"><body><Providers><ScrollReveals /><Header />{children}<Footer /></Providers></body></html>;
+  return <html lang="it"><body><Providers><ScrollReveals /><Header />{children}<Footer /></Providers><script defer src="/privacy-notice.js" />
+      </body></html>;
 }
