@@ -9,7 +9,7 @@ export default function Footer() {
           <img src="/images/brand/logo-cesena.png" alt="Carroattrezzi Cesena" className="mb-4 h-auto w-60 max-w-full" />
           <p className="text-emerald-50/75">Soccorso stradale, traino auto e recupero veicoli a Cesena e provincia.</p>
           <div className="mt-5 space-y-2 text-sm text-emerald-50/75">
-            <p>{site.address}</p>
+            
             <p><a href={`tel:${site.tel}`}>{site.phone}</a></p>
             <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
           </div>

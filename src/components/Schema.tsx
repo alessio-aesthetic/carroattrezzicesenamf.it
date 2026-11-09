@@ -8,14 +8,7 @@ export default function Schema() {
     url: site.url,
     telephone: site.tel,
     email: site.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Via Cervese, 3725",
-      postalCode: "47521",
-      addressLocality: "Cesena",
-      addressRegion: "FC",
-      addressCountry: "IT",
-    },
+    
     areaServed: ["Cesena", "Cesenatico", "Forlì", "Gambettola", "Savignano sul Rubicone"],
     openingHours: "Mo-Su 00:00-23:59",
     image: `${site.url}/images/recovery/c-hero-main.webp`,
