@@ -5,7 +5,6 @@ export const site = {
   phone: "0547 040096",
   tel: "+390547040096",
   email: "assistenza@carroattrezzicesenamf.it",
-  address: "Via Cervese, 3725, 47521 Cesena FC",
   city: "Cesena",
 };
 
